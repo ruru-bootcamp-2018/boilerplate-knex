@@ -4,3 +4,14 @@
 <a href="{{url}}">My website.... </a> <a href="{{email}}">and my email </a>
 <h3>Favorite Cheese:</h3><p>{{favorite_cheese}}</p>
 <h3>Relationship Status:</h3><p>{{relationship_status}}</p>
+<br><br>
+<form id="form" action="/blog" method="post">
+<h3>Tell us your story..</h3>
+  <h4>Blog Title:</h4> <input type="text" name="title"><br><br>
+ <h4>Blog:</h4>  <textarea rows="4" cols="50" name="body"></textarea>
+ <input type="hidden" name="id" value={{user_id}}>
+ 
+ <br><br> <input type="submit" value="Submit">
+</form>
+
+

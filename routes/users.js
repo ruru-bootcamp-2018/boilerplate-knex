@@ -34,6 +34,18 @@ router.post('/add', (req, res) => {
   
 })
 
+router.post('/blog', (req,res) => {
+  var data = req.body
+  db.addBlogPost(data)
+    .then(id => {
+      db.getBlog(id)
+        .then(data => {
+          console.log(data)
+          res.render('/blogpost/'+data.id, data)
+        })
+    })
+})
+
 
 
 module.exports = router

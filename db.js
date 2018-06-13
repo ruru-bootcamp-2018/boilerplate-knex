@@ -5,7 +5,9 @@ const connection = require('knex')(config)
 module.exports = {
   getUser: getUser,
   getUsers: getUsers,
-  addUser: addUser
+  addUser: addUser,
+  addBlogPost: addBlogPost,
+  getBlog: getBlog
 }
 
 function getUsers (testConn) {
@@ -21,11 +23,6 @@ function getUser (id, testConn) {
   .first()
 }
 
-function getProfile (id, testConn) {
-  const conn = testConn || connection
-  return conn('profiles')
-    .where()
-}
 
 function addUser (data, testConn) {
   const conn = testConn || connection 
@@ -34,11 +31,27 @@ function addUser (data, testConn) {
     .then((id) => {
       return conn('profiles')
         .insert({'url': data.url, 'profile_pic': data.profile_pic, 'user_id': id[0], 'favorite_cheese': data.favorite_cheese, 'relationship_status': data.relationship_status})
+       
     })
     .catch(err)
 }
 
-function err(error) {
-  if (error) throw new Error;
+function addBlogPost (data, testConn) {
+  const conn = testConn || connection 
+  // console.log(data)
+  return conn('blogs')
+    .insert({'user_id': data.id, 'body': data.body, 'title': data.title})
 }
 
+function getBlog (id, testConn) {
+  console.log(id)
+  const conn = testConn || connection 
+  return conn('blogs')
+    .where('id', id)
+    //something broken in the where
+}
+
+
+function err (error) {
+  if (error) throw new Error;
+}
