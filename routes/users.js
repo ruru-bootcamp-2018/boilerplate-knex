@@ -27,6 +27,18 @@ router.get('/profiles', (req, res) => {
     })
 })
 
+router.get('/blogs', (req, res) => {
+  db.getBlogs()
+    .then((blogs) => {
+      console.log(blogs)
+      res.render('blog-list', {blogs})
+    })
+})
 
-
+router.get('/:id',(req,res) =>{
+  db.getProfile(req.params.id)
+  .then(profile => {
+    res.render('profile', profile)
+  })
+})
 module.exports = router

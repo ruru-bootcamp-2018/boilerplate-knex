@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EDA Phase 1 Express Boilerplate</title>
+    <style>
+      body {
+        background-color: beige;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+
+
+
+  <body>
+    <h1>This is a view of all the blogs</h1>
+{{!--      
+    <h4>Name: {{name}}</h4>, 
+    
+    <img src="{{profile_pic}}"></img>
+
+    <h5>Email: {{email}}</h5> 
+    <h6><a href="{{URL}}">My homepage</a></h6> 
+     --}}
+    <ul>
+        {{#each blogs}}
+            <li>{{post_id}}</li>,
+            <li>{{title}}</li>,
+            <li>{{user_id}}</li>,
+            <li>{{content}}</li>
+        {{/each}}
+    </ul>
+
+  </body>
+</html>
