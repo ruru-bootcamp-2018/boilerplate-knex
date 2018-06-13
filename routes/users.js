@@ -24,7 +24,6 @@ router.get('/profiles/:id', (req, res) => {
 router.get('/add', (req, res) => {
   res.render('new')
 })
-module.exports = router
 
 router.post('/add', (req, res) => {
   var data = req.body
@@ -34,3 +33,7 @@ router.post('/add', (req, res) => {
     })
   
 })
+
+
+
+module.exports = router
