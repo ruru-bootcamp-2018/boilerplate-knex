@@ -3,16 +3,16 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  getUser: getUser,
-  getUsers: getUsers
+  getPath: getPath,
+  getPaths: getPaths
 }
 
-function getUsers (testConn) {
+function getPaths (testConn) {
   const conn = testConn || connection
-  return conn('users').select()
+  return conn('paths').select()
 }
 
-function getUser (id, testConn) {
+function getPath (id, testConn) {
   const conn = testConn || connection
-  return conn('users').where('id', id).first()
+  return conn('paths').where('id', id).first()
 }
