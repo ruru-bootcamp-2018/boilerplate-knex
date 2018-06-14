@@ -14,4 +14,12 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/path/:id', (req,res)=>{
+  let id = req.params.id
+  db.getPath(id)
+  .then(path =>{
+    res.render('path', path)
+  })
+})
+
 module.exports = router
