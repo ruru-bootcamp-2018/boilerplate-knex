@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
     })
 })
 
+
 router.get('/path/:id', (req,res)=>{
   let id = req.params.id
   db.getPath(id)
@@ -21,5 +22,16 @@ router.get('/path/:id', (req,res)=>{
     res.render('path', path)
   })
 })
+
+// router.get('/path/:id', (req, res) => {
+//   let ch1id = req.body.ch1id
+//   let ch2id = req.body.ch2id
+//   db.choice(req.params.id, ch1id, ch2id)
+//   .then(pathChoice =>{
+//     console.log(req.params.id, ch1id, ch2id)
+//     res.render('path', pathChoice)
+//   })
+// })
+
 
 module.exports = router

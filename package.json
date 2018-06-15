@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dev-academy-challenges/boilerplate-knex#readme",
   "dependencies": {
+    "bulma": "^0.7.1",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "knex": "^0.14.2",
