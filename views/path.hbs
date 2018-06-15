@@ -1,40 +1,70 @@
-
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PickAPath</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-  </head>
-  <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        PickAPath
-      </h1>
-      <p class="subtitle">
-        The Classic Adventure Quest
-      </p>
-    </div>
-  </section> 
 
+<head>
+  <meta charset="utf-8">
 
-<div class="columns is-mobile">
-  <div style="text-align: center; font-size: 30px" class="column is-three-fifths is-offset-one-fifth">{{story}}</div>
-</div>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PickAPath</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
 
+<body>
 
-  <section class="body">
-    <div class="path">
-      <h1>This is your path</h1>
-        <br>
-        <img src="{{img}}">
-        <a href="/path/{{ch1id}}">{{ch1text}}</a><br>     
-        <a href="/path/{{ch2id}}">{{ch2text}}</a>
+  {{!-- Header --}}
+  <section class="hero is-primary is-normal">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          PickAPath
+        </h1>
+        <h2 class="subtitle">
+          The Classic Adventure Quest
+        </h2>
+      </div>
     </div>
   </section>
-  </body>
+  <div class="columns is-mobile">
+    <div style="text-align: center; font-size: 30px" class="column is-three-fifths is-offset-one-fifth">{{story}}</div>
+  </div>
+
+  <div class="columns">
+    <div class="column is-6 is-offset-3">
+      <img src="{{img}}">
+    </div>
+  </div>
+
+  <div class="columns">
+    {{!-- LEFT COLUMN --}}
+    <div class="column is-3 is-offset-3">
+
+      <a class="button is-large is-fullwidth is-rounded is-primary" type="submit" href="/path/{{ch1id}}">{{ch1text}}</a>
+
+    </div>
+    {{!-- RIGHT COLUMN --}}
+    <div class="column is-3 textAlignRight">
+
+      <a class="button is-large is-fullwidth is-rounded is-primary" type="submit" href="/path/{{ch2id}}">{{ch2text}}</a>
+
+    </div>
+  </div>
+</body>
 </html>
+
+
+
+{{!--
+<section class="body">
+  <div class="path">
+    <br>
+    <img src="{{img}}">
+    <a href="/path/{{ch1id}}">{{ch1text}}</a>
+    <br>
+    <a href="/path/{{ch2id}}">{{ch2text}}</a>
+  </div>
+</section>
+</body>
+
+</html> --}}
